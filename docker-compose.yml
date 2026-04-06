@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Target service with unencrypted HTTP
+  target-http:
+    build: ./target-service
+    container_name: target-http
+    ports:
+      - "8080:8080"
+    networks:
+      - test-network
+    environment:
+      - SERVICE_NAME=HTTP-Service
+      - ENCRYPTION=false
+
+  # Target service with encrypted HTTPS
+  target-https:
+    build: ./target-service
+    container_name: target-https
+    ports:
+      - "8443:8443"
+    networks:
+      - test-network
+    environment:
+      - SERVICE_NAME=HTTPS-Service
+      - ENCRYPTION=true
+    volumes:
+      - ./target-service/certs:/app/certs
+
+  # Kali Linux container for security testing
+  kali-tester:
+    image: kalilinux/kali-rolling:latest
+    container_name: kali-tester
+    networks:
+      - test-network
+    volumes:
+      - ./security-tests:/tests
+      - ./results:/results
+    command: tail -f /dev/null
+    stdin_open: true
+    tty: true
+
+networks:
+  test-network:
+    driver: bridge

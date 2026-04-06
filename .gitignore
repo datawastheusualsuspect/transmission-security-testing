@@ -1,0 +1,75 @@
+# Results and test outputs
+results/*
+!results/.gitkeep
+!results/visualizations/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# SSL certificates (if any)
+*.pem
+*.key
+*.crt
+*.csr
+
+# Packet captures
+*.pcap
+
+# Security test results
+*security_report*
+*vulnerability*
+*mitm_*
+
+# Backup files
+*.bak
+*.backup

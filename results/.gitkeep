@@ -1,0 +1,2 @@
+# This file ensures the results directory is tracked by git
+# Test results and visualizations will be generated here when running the project

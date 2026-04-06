@@ -1,0 +1,14 @@
+# Docker ignore file
+results/*
+.git
+.gitignore
+README.md
+*.md
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
